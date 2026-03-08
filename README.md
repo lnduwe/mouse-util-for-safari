@@ -6,7 +6,7 @@ Tested on macOS 26.3.1
 
 Steps
 
-1. Compile the code
+1. Create a macOS command line tool project in Xcode and compile.
    
 2. Copy the binary to /usr/local/bin
    
