@@ -12,6 +12,7 @@ Steps
    
 3. Creat a plist file:
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -28,6 +29,7 @@ Steps
     <true/>
 </dict>
 </plist>
+```
 
 Copy the file to ~/Library/LaunchAgents/
 
