@@ -6,7 +6,9 @@ Tested on macOS 26.3.1
 
 Steps
 
-1. Create a macOS command line tool project in Xcode and compile.
+1. Create a macOS command line tool project in Xcode.
+   Compile: CMD+B
+   Product->Archive->Distribute Contents->Build Products
    
 2. Copy the binary to /usr/local/bin
    

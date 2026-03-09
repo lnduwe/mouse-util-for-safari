@@ -38,7 +38,7 @@ func startMouseListener() {
                 return nil
             }
 
-        if mouseButton == 3 {
+            if mouseButton == 3 {
                 let cmdDown = CGEvent(keyboardEventSource: nil, virtualKey: kVK_ANSI_LeftBracket, keyDown: true)
                 cmdDown?.flags = .maskCommand
 
