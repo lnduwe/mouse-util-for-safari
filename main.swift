@@ -11,12 +11,12 @@ import CoreGraphics
 
 let kVK_ANSI_LeftBracket: CGKeyCode = 0x21 // '['
 let kVK_ANSI_RightBracket: CGKeyCode = 0x1E
-
+let kVK_ANSI_F: CGKeyCode = 0x03
 
 func startMouseListener() {
 
     let eventMask = (1 << CGEventType.otherMouseDown.rawValue)
-    
+
     guard let eventTap = CGEvent.tapCreate(
         tap: .cghidEventTap,
         place: .headInsertEventTap,
@@ -47,6 +47,20 @@ func startMouseListener() {
 
                 cmdDown?.post(tap: .cgAnnotatedSessionEventTap)
                 cmdUp?.post(tap: .cgAnnotatedSessionEventTap)
+
+                return nil
+            }
+            if mouseButton == 5 {
+                let flags: CGEventFlags = [.maskCommand, .maskShift]
+
+                let keyDown = CGEvent(keyboardEventSource: nil, virtualKey: kVK_ANSI_F, keyDown: true)
+                keyDown?.flags = flags
+
+                let keyUp = CGEvent(keyboardEventSource: nil, virtualKey: kVK_ANSI_F, keyDown: false)
+                keyUp?.flags = flags
+
+                keyDown?.post(tap: .cghidEventTap)
+                keyUp?.post(tap: .cghidEventTap)
 
                 return nil
             }
